@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="WordSpark, a quick word scramble game." />
+    <title>WordSpark | Word Scramble Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="WordSpark home"><span>W</span>WordSpark</a>
+        <p>WORD SCRAMBLE</p>
+      </header>
+
+      <section id="start-screen" class="screen start-screen">
+        <div class="badge">✦ QUICK WORD GAME</div>
+        <h1>Unscramble the <em>spark.</em></h1>
+        <p class="lead">Find the hidden word before the timer reaches zero. Use a hint if you get stuck—but choose wisely.</p>
+        <div class="how-it-works">
+          <div><b>01</b><span>Read the hint</span></div>
+          <div><b>02</b><span>Unscramble letters</span></div>
+          <div><b>03</b><span>Build your streak</span></div>
+        </div>
+        <button id="start-button" class="action-button">Play now <span>→</span></button>
+      </section>
+
+      <section id="game-screen" class="screen game-screen hidden" aria-live="polite">
+        <div class="game-status">
+          <div class="stat"><span>ROUND</span><strong id="round">01 / 10</strong></div>
+          <div class="timer"><span>◷</span><strong id="time">30</strong><small>s</small></div>
+          <div class="stat align-right"><span>SCORE</span><strong id="score">0</strong></div>
+        </div>
+        <div class="timer-track"><div id="timer-bar" class="timer-bar"></div></div>
+        <article class="game-card">
+          <p class="label">UNSCRAMBLE THIS WORD</p>
+          <h1 id="scrambled-word" class="scrambled-word">C I R C U I T</h1>
+          <div class="hint-box"><span>✦</span><p><b>Hint</b><span id="hint">A path for electric current to flow.</span></p></div>
+          <label class="answer-label" for="answer-input">YOUR ANSWER</label>
+          <div class="answer-row">
+            <input id="answer-input" type="text" autocomplete="off" placeholder="Type the word here..." />
+            <button id="check-button" class="action-button">Check</button>
+          </div>
+          <p id="message" class="message" aria-live="assertive"></p>
+          <div class="game-actions">
+            <button id="hint-button" class="text-button">Use a hint <span>−5 points</span></button>
+            <button id="skip-button" class="text-button">Skip word →</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="result-screen" class="screen result-screen hidden">
+        <p class="label">GAME COMPLETE</p>
+        <div class="trophy">✦</div>
+        <h1 id="result-heading">Words conquered!</h1>
+        <p id="result-copy">You kept your brain moving.</p>
+        <div class="result-stats">
+          <div><span>FINAL SCORE</span><strong id="final-score">0</strong></div>
+          <div><span>BEST SCORE</span><strong id="best-score">0</strong></div>
+        </div>
+        <button id="play-again" class="action-button">Play again <span>↻</span></button>
+      </section>
+    </main>
+    <footer>WordSpark · HTML, CSS &amp; JavaScript</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
